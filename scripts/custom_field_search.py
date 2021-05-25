@@ -34,7 +34,7 @@ class AllLicensesScript(Script):
 
     def run(self, data, commit):
         dev=[]
-        for device in Device.objects.filter(status=DeviceStatusChoices.STATUS_ACTIVE):
+        for device in Device.objects.filter(status='active'):
             if device.custom_field_data.get('License'):
                 #if site name selected and match
                 if data['site_name'] == device.site:
