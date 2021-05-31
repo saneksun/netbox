@@ -67,7 +67,6 @@ class GetInventoryScript(Script):
             # add a header to the top of the list 
             inv.insert(0,str("device,name,manufacturer,part_id,serial"))
             return '\n\n'.join(inv)
-
         else:
             self.log_failure('Nothing found')
 
