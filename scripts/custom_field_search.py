@@ -31,7 +31,6 @@ class AllLicensesScript(Script):
     comments_field = BooleanVar(
             description="Show information from Comments field?"
     )
-
     def run(self, data, commit):
         dev=[]
         for device in Device.objects.filter(status='active'):
