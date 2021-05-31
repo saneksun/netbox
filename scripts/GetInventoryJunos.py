@@ -8,7 +8,7 @@ import jxmlease, os, re
 
 class GetInventoryScript(Script):
 
-    name = "Collect inventory items information from Juniper devices --- TEST"
+    name = "Collect inventory items information from Juniper devices"
 
     class Meta:
         description = "Getting inventory information (via netconf)"
