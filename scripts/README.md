@@ -6,5 +6,5 @@ Search can be done by site name, device type, vendor.
 Licenses output is in Juniper format
 
 ### <i>GetInventoryJunos.py</i>
-Getting chassis inventory information from JunOS devices, using NETCONF (on primary_ip). 
+Getting chassis inventory information from JunOS devices that are registered in Netbox and have primary_ip address, using NETCONF (must be allowded on devices). 
 Search can be done by site name, device type, device name.
