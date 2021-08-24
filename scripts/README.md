@@ -10,6 +10,9 @@ Getting chassis inventory information from JunOS devices that are registered in 
 Search can be done by site name, device type, device name.
 
 Add the following modules to requirements.txt:
+
 jxmlease==1.0.3
+
 lxml==4.6.3
+
 junos-eznc==2.6.0
