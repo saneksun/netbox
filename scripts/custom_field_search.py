@@ -13,19 +13,16 @@ class AllLicensesScript(Script):
     site_name = ObjectVar(
             description="Specify site - all, if not selected (<i>Optional</i>)",
             model=Site,
-            display_field='site',
             required=False
     )
     device_type = ObjectVar(
             description="Specify device type - all, if not selected (<i>Optional</i>)",
             model=DeviceType,
-            display_field='model',
             required=False
     )
     manufacturer_name = ObjectVar(
             description="Specify device manufactureir - all, if not selected (<i>Optional</i>)",
             model=Manufacturer,
-            display_field='Manufacturer',
             required=False
     )
     comments_field = BooleanVar(
@@ -55,7 +52,7 @@ class AllLicensesScript(Script):
         if data['device_type']:
             if device.device_type == data['device_type']:
                 dev.append(str(device))
-                dev.append(str(device.device_type.display_name))
+                dev.append(str(device.device_type.model))
                 dev.append(re.sub('\s{2,}', ' \n', str(device.cf.get("License"))))
                 if data['comments_field'] is True:
                     dev.append(device.comments)
@@ -64,7 +61,7 @@ class AllLicensesScript(Script):
         elif data['manufacturer_name']:
             if device.device_type.manufacturer == data['manufacturer_name']:
                 dev.append(str(device))
-                dev.append(str(device.device_type.display_name))
+                dev.append(str(device.device_type.model))
                 dev.append(re.sub('\s{2,}', ' \n', str(device.cf.get("License"))))
                 if data['comments_field'] is True:
                     dev.append(device.comments)
@@ -72,7 +69,7 @@ class AllLicensesScript(Script):
                 pass
         else:
               dev.append(str(device))
-              dev.append(str(device.device_type.display_name))
+              dev.append(str(device.device_type.model))
               dev.append(re.sub('\s{2,}', ' \n', str(device.cf.get("License"))))
               if data['comments_field'] is True:
                   dev.append(device.comments)
