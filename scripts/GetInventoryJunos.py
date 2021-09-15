@@ -71,7 +71,10 @@ class GetInventoryScript(Script):
             self.log_failure('Nothing found')
 
     def sys_hardware(self,host,inv):
-        dev = Node(host=host, user='username', password='password', normalize=True, hostkey_verify=False)
+        # For auth via username password:
+        dev = Node(host=host, port=830, user='username', password='password', normalize=True, hostkey_verify=False)
+        # For auth via ssh-key:
+        # dev = Node(host=host, port=830, user='username', ssh_private_key_file='/path/to/private/key/id_rsa', normalize=True, hostkey_verify=False)
         dev.open()
         hostname=str(dev.facts['hostname'])
         self.log_info('Connected to {}'.format(hostname))
