@@ -15,4 +15,4 @@ jxmlease==1.0.3
 
 lxml==4.6.3
 
-junos-eznc==2.6.0
+junos-eznc==2.6.3
